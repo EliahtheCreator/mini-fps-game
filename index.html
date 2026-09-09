@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mini FPS</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main id="game-shell">
+    <canvas id="game-canvas" aria-label="Mini FPS game"></canvas>
+
+    <section id="hud" aria-label="game status">
+      <div class="hud-group">
+        <div class="stat">
+          <span>生命</span>
+          <strong id="health-value">100</strong>
+        </div>
+        <div class="meter" aria-hidden="true">
+          <i id="health-bar"></i>
+        </div>
+      </div>
+      <div class="hud-group compact">
+        <div class="stat">
+          <span>目标</span>
+          <strong id="enemy-value">6</strong>
+        </div>
+        <div class="stat">
+          <span>分数</span>
+          <strong id="score-value">0</strong>
+        </div>
+      </div>
+    </section>
+
+    <div id="crosshair" aria-hidden="true"></div>
+
+    <section id="overlay" class="overlay">
+      <div class="panel">
+        <p class="eyebrow">ISpark Lab Range</p>
+        <h1>Mini FPS</h1>
+        <p id="overlay-copy">进入训练场，清除所有移动目标。</p>
+        <div class="settings" aria-label="game settings">
+          <label>
+            <span>敌人外观</span>
+            <select id="enemy-style">
+              <option value="mesh" selected>3D 灰模</option>
+              <option value="sprite">上传贴图</option>
+            </select>
+          </label>
+          <label>
+            <span>敌人模式</span>
+            <select id="enemy-behavior">
+              <option value="dynamic" selected>动态</option>
+              <option value="static">静态</option>
+            </select>
+          </label>
+          <label class="upload-label" for="enemy-texture">
+            <span id="texture-label">选择贴图</span>
+          </label>
+          <input id="enemy-texture" type="file" accept="image/*">
+        </div>
+        <button id="start-button" type="button">开始</button>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="./game.js"></script>
+</body>
+</html>
