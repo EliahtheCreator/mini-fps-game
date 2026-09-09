@@ -300,7 +300,7 @@ function tryMove(deltaMove) {
 
 function updatePlayer(dt) {
   const forward = new THREE.Vector3(-Math.sin(player.yaw), 0, -Math.cos(player.yaw));
-  const right = new THREE.Vector3(-Math.cos(player.yaw), 0, Math.sin(player.yaw));
+  const right = new THREE.Vector3(Math.cos(player.yaw), 0, -Math.sin(player.yaw));
   const move = new THREE.Vector3();
 
   if (keys.has("KeyW")) move.add(forward);
