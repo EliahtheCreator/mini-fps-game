@@ -305,8 +305,8 @@ function updatePlayer(dt) {
 
   if (keys.has("KeyW")) move.add(forward);
   if (keys.has("KeyS")) move.sub(forward);
-  if (keys.has("KeyD")) move.add(right);
-  if (keys.has("KeyA")) move.sub(right);
+  if (keys.has("KeyA")) move.add(right);
+  if (keys.has("KeyD")) move.sub(right);
 
   if (move.lengthSq() > 0) {
     move.normalize().multiplyScalar(player.speed * dt);
